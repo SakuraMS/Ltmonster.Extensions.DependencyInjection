@@ -67,7 +67,7 @@ public class MyService: IMyService,ITransient
 2. IScoped,IScoped<T>,[Scoped],[Scoped<T>]
 3. ITransient,ITransient<T>,[Transient],[Transient<T>]
 
-## Used in Program.cs
+## 5.Used in Program.cs
 ```csharp
 //1.Except that assemblies starting with System. and Microsoft. will be scanned
 builder.Service.AutoRegister();
