@@ -1,0 +1,6 @@
+﻿/.vs
+/Ltmonster.Extensions.DependencyInjection/bin
+/Ltmonster.Extensions.DependencyInjection/obj
+/Ltmonster.Extensions.DependencyInjection/*.user
+/Ltmonster.Extensions.DependencyInjection/Properties/PublishProfiles/FolderProfile.pubxml
+/Ltmonster.Extensions.DependencyInjection/Properties/PublishProfiles/FolderProfile.pubxml.user
