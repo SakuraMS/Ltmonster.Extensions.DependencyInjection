@@ -18,6 +18,9 @@ public class MyService: IMyService, ITransient<IMyService>
         
     }
 }
+
+//The other two life cycle registration methods are supported
+//ISingleton,ISingleton<T>,IScoped,IScoped<T>
 ```
 
 ## 2.Add Transient attribute
@@ -39,10 +42,13 @@ public class MyService: IMyService
         
     }
 }
+
+//The other two life cycle registration methods are supported
+//[Singleton],[Singleton<T>],[Transient],[Transient<T>]
 ```
 
 ## 3.Multiple lifecycles
-Of course, if you want to add services with multiple lifecycles, we support mixing.
+Of course, if you want to add services with multiple lifecycles, we support mixing and we do not double register.
 ```csharp
 public class MyService: ITransient,ITransient<IMyService>
 {
@@ -62,16 +68,11 @@ public class MyService: IMyService,ITransient
 }
 ```
 
-## 4.Supports the registration of three lifecycle services.
-1. ISingleton,ISingleton<T>,[Singleton],[Singleton<T>]
-2. IScoped,IScoped<T>,[Scoped],[Scoped<T>]
-3. ITransient,ITransient<T>,[Transient],[Transient<T>]
-
-## 5.Used in Program.cs
+## 4.Used in Program.cs
 ```csharp
-//1.Except that assemblies starting with System. and Microsoft. will be scanned
+//1.Except that assemblies starting with "System." and "Microsoft." will be scanned.
 builder.Service.AutoRegister();
 
-//2.The assembly for configuration item "Ltmonster:ServiceAutoRegister:Assemblies" will be scanned
+//2.The assembly for configuration item "Ltmonster:ServiceAutoRegister:Assemblies" will be scanned,this way is recommended.
 builder.Service.AutoRegister(builder.Configuration);
 ```
